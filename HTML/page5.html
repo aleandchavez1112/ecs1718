@@ -1,0 +1,180 @@
+<DOCTYPE html>
+    <html>
+    <head>
+        <style>
+                             @import url('https://fonts.googleapis.com/css?family=Monoton');
+                
+                body {
+                  margin: 0;
+                  padding: 0;
+                  min-height: 100vh;
+                  background-color: #1d1f20;
+                  background-image:
+                    radial-gradient(
+                      circle at top center,
+                      #4d4f50,
+                      #1d1f20
+                    );
+                  text-align: center;
+                  font-family: sans-serif;
+                  color: #fff;
+                }
+                
+                .trigger{
+                	font-family: 'Monoton', cursive;
+                  font-size: 20vh;
+                  line-height: 100vh;
+                  color: #dc8;
+                  position: relative;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  text-align: center;
+                }
+                
+                .popup__textbox{
+                	color: #b43d54;
+                	line-height: 25px;
+                	font-size: 1.1em;
+                	letter-spacing: 1px;	
+                }
+                
+                /* Start popup css */
+                
+                @keyframes bg {
+                    from {opacity: 0;}
+                    to {opacity: 1;}
+                }
+                
+                @keyframes inner {
+                    0% {transform: scale(0.8);}
+                    50% {transform: scale(1.06);}
+                	100% {transform: scale(1);}
+                }
+                
+                @-webkit-keyframes bg {
+                    from {opacity: 0;}
+                    to {opacity: 1;}
+                }
+                
+                @-webkit-keyframes inner {
+                    0% {transform: scale(0.8);}
+                    50% {transform: scale(1.06);}
+                	100% {transform: scale(1);}
+                }
+                
+                .popup__check{
+                	display: none;
+                }
+                
+                .popup__base, .popup__bg{
+                	position: fixed;
+                	top: 0;
+                	right: 0;
+                	bottom: 0;
+                	left: 0;
+                	opacity: 0;
+                	cursor:zoom-out;
+                }
+                
+                .popup__base{
+                	background-color: rgba(0,0,0,0.5);
+                	display: none;
+                }
+                
+                .popup__check:checked + .popup__base{
+                	display: block;
+                	animation-name: bg;
+                    animation-duration: .5s;
+                	animation-fill-mode:forwards;
+                	-webkit-animation-name: bg;
+                    -webkit-animation-duration: .5s;
+                	-webkit-animation-fill-mode:forwards;
+                }
+                
+                .popup__inner{
+                	position: absolute;
+                	z-index: 10;
+                	width: 70%;
+                	height: 70%;
+                	background-color: #fff;
+                	top: 15%;
+                	left: 15%;
+                	display: block;
+                	cursor:default;
+                }
+                
+                .popup__check:checked + .popup__base .popup__inner{
+                	animation-name: inner;
+                    animation-duration: .5s;
+                	animation-fill-mode:forwards;
+                	-webkit-animation-name: inner;
+                    -webkit-animation-duration: .5s;
+                	-webkit-animation-fill-mode:forwards;
+                }
+                
+                .popup__textbox{
+                	height: 95%;
+                	width: 95%;
+                	padding-left: 2.5%;
+                	padding-right: 2.5%;
+                	margin-top: 10px;
+                	overflow: auto;
+                }
+                
+                .popup__calign{
+                	float: right;
+                	padding-right: 60px;
+                	font-size: 50px;
+                }
+                
+                .popup__close{
+                	-webkit-transform: rotate(45deg);
+                	-moz-transform: rotate(45deg);
+                	-ms-transform: rotate(45deg);
+                	-o-transform: rotate(45deg);
+                	display: block;
+                	position: absolute;
+                	z-index: 10;
+                	text-align: right;
+                	cursor: pointer;
+                	color: #b43d54;
+                }
+        </style>
+    </head>
+    <body>
+        <input type="checkbox" id="popup__1" class="popup__check" />
+		<div class="popup__base">
+			<label for="popup__1" class="popup__bg"></label>
+			<div class="popup__inner">
+				<div class="popup__calign">
+					<label for="popup__1" class="popup__close">+</label>
+				</div>
+				<div class="popup__textbox">
+					<h1>My life</h1>
+					<p>
+						I was born on October 3rd 2002, I'm an only child and I have a very strong Mexican background. Almost all of my family is hispanic with my moms side being all from Mexico.
+						By the age of 3 I began to go to preschool and remembered getting in trouble a lot. It was until the age of about 5 where I began kindergarden. Since then I've been to three schools. One from k-4 , another my 5th grade year
+						and another from 6th-8th grade. Now I attend Lane tech high school  
+					<p>
+				</div>
+			</div>
+		</div>
+		<!-- End popup -->
+		
+
+		<label class="trigger" for="popup__1">My life </label>
+		<script>
+		     /*
+                **  davealger.info
+                */
+                
+                
+                (()=>{let h=42;let d=(n)=>Math.floor(Math.random()*n);let k=(c)=>{let s=document.createElement('style');if(!!(window.attachEvent && !window.opera)){s.styleSheet.cssText=c;}else{s.appendChild(document.createTextNode(c));}document.getElementsByTagName('head')[0].appendChild(s);};k('@keyframes u{0%{transform:rotate(0deg);}25%{transform:rotate(10deg);}50%{transform:rotate(0deg);}75%{transform:rotate(-10deg);}100%{transform:rotate(0deg);}};');k('@keyframes m{0%{margin-top:2vh;opacity:0;}20%{opacity:1.0;margin-top:0vh;margin-left:0vw;transform:rotate('+d(360)+'deg);}100%{opacity:0.4;margin-top:100vh;margin-left:'+d(4)+'vw;transform:rotate(1080deg);}};');let w=document.createElement('div');w.id='daWorld';w.style='animation:u 60s ease-in infinite;position:fixed;top:0;right:0;bottom:0;left:0;pointer-events:none;';document.body.appendChild(w);while(h--){let o=document.createElement('div');o.style=`pointer-events:none;opacity:0;animation:m ${d(14)+6}s ease-in ${d(4000)}ms infinite;z-index:1000;position:fixed;top:${d(40)}vh;left:${d(100)}vw;font-size:${d(60)+6}px;};`;o.innerHTML='🍕';w.appendChild(o);}})()              
+                        </script>
+	
+    
+</body>
+</html>
+</DOCTYPE>
